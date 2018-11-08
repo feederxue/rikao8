@@ -1,0 +1,106 @@
+@import"common.scss";
+@import"_minix.scss";
+@mixin wh($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+* {
+    list-style: none;
+}
+
+.wrap {
+    @include wh(100%, 100%);
+    @include box-flex;
+    @include direction(column);
+    overflow: hidden;
+    i {
+        font-size: pxTorem(15px)!important;
+    }
+}
+
+header {
+    background: #eee;
+    color: #989898;
+    .top {
+        @include wh(100%, pxTorem(44px));
+        @include box-flex;
+        @include align;
+        @include justify(space-between);
+        padding: 0 pxTorem(10px);
+        @include sizing;
+        p {
+            width: 80%;
+            background: #fff;
+            height: 70%;
+            line-height: pxTorem(35px);
+            @include sizing;
+            i {
+                margin: 0 pxTorem(10px);
+            }
+            input {
+                color: #ccc;
+            }
+        }
+    }
+    .nav {
+        @include wh(100%, pxTorem(35px));
+        @include box-flex;
+        @include align;
+        @include justify(space-between);
+        li {
+            margin-left: pxTorem(10px);
+        }
+        .active {
+            color: orange;
+            border-bottom: 2px solid orange;
+        }
+    }
+}
+
+section {
+    flex: 1;
+    overflow-y: auto;
+    .img {
+        @include wh(100%, pxTorem(100px));
+        @include box-flex;
+        @include align;
+        dl {
+            margin: 0 pxTorem(5px);
+            dt {
+                margin-top: pxTorem(10px);
+                color: #ccc;
+                span {
+                    color: red;
+                }
+            }
+        }
+    }
+    .big-img {
+        @include wh(100%, auto);
+        padding: 0 pxTorem(10px);
+        @include sizing;
+        img {
+            @include wh(100%, auto);
+        }
+        p {
+            @include wh(100%, pxTorem(30px));
+            line-height: pxTorem(30px);
+            font-weight: bold;
+        }
+    }
+}
+
+footer {
+    @include wh(100%, pxTorem(50px));
+    @include box-flex;
+    @include align;
+    @include justify(space-around);
+    flex-shrink: 0;
+    dl {
+        text-align: center;
+    }
+    .active {
+        color: orange;
+    }
+}
